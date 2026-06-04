@@ -27,6 +27,40 @@ header h1 {
 header p {
   font-size: 1.1rem;
   color: #aaa;
+  margin-bottom: 1rem;
+}
+
+header p #mode-label {
+  color: #ff6b35;
+  font-weight: bold;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.toggle-btn {
+  background: transparent;
+  color: #aaa;
+  border: 2px solid #333;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+  border-color: #ff6b35;
+  color: #fff;
+}
+
+.toggle-btn.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  color: #fff;
 }
 
 main {

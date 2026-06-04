@@ -8,8 +8,12 @@
 </head>
 <body>
 <header>
-<h1>Melhores Jogos Roblox por Categoria</h1>
-<p>Os jogos mais bem avaliados do Roblox em cada gênero</p>
+<h1>Melhores Jogos por Categoria</h1>
+<p id="subtitle">Os melhores jogos <span id="mode-label">PC</span> em cada gênero</p>
+<div class="toggle-container">
+  <button id="btn-pc" class="toggle-btn active" onclick="switchMode('pc')">&#128187; PC</button>
+  <button id="btn-mobile" class="toggle-btn" onclick="switchMode('mobile')">&#128241; Celular</button>
+</div>
 </header>
 <main id="app">
 <div class="loading">Carregando...</div>
