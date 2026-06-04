@@ -63,6 +63,50 @@ header p #mode-label {
   color: #fff;
 }
 
+.tier-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.tier-btn {
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tier-btn:hover {
+  border-color: #ff6b35;
+  color: #fff;
+}
+
+.tier-btn.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  color: #fff;
+}
+
+.tier-game-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.tier-badge-super_fraco { background: #7f8c8d; color: #fff; }
+.tier-badge-fraco { background: #27ae60; color: #fff; }
+.tier-badge-mediano { background: #f39c12; color: #fff; }
+.tier-badge-forte { background: #e74c3c; color: #fff; }
+
 main {
   max-width: 1200px;
   margin: 0 auto;

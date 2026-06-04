@@ -10,47 +10,51 @@ const categoryColors = {
   "Terror": "#2c3e50", "Luta": "#e74c3c",
 };
 
+const tierNames = {
+  super_fraco: "Super Fraco", fraco: "Fraco", mediano: "Mediano", forte: "Forte",
+};
+
 const pcGames = [
-  { id: 1, title: "Blox Fruits", cat: "RPG", rate: 9.6, year: 2019, uid: 2753915549 },
-  { id: 2, title: "World // Zero", cat: "RPG", rate: 9.4, year: 2020, uid: 1278504545 },
-  { id: 3, title: "King Legacy", cat: "RPG", rate: 9.3, year: 2021, uid: 4529299233 },
-  { id: 4, title: "Arcane Odyssey", cat: "RPG", rate: 9.5, year: 2022, uid: 2753915549 },
-  { id: 5, title: "Swordburst 2", cat: "RPG", rate: 9.1, year: 2018, uid: 2753915549 },
-  { id: 6, title: "Arsenal", cat: "FPS", rate: 9.5, year: 2016, uid: 286090480 },
-  { id: 7, title: "Phantom Forces", cat: "FPS", rate: 9.4, year: 2015, uid: 292439477 },
-  { id: 8, title: "Bad Business", cat: "FPS", rate: 9.2, year: 2018, uid: 286090480 },
-  { id: 9, title: "Counter Blox", cat: "FPS", rate: 9.0, year: 2016, uid: 292439477 },
-  { id: 10, title: "Rivals", cat: "FPS", rate: 9.3, year: 2021, uid: 286090480 },
-  { id: 11, title: "Adopt Me!", cat: "Aventura", rate: 9.7, year: 2017, uid: 375992766 },
-  { id: 12, title: "Brookhaven RP", cat: "Aventura", rate: 9.6, year: 2020, uid: 375992766 },
-  { id: 13, title: "Jailbreak", cat: "Aventura", rate: 9.5, year: 2017, uid: 2432640257 },
-  { id: 14, title: "Natural Disaster Survival", cat: "Aventura", rate: 9.0, year: 2008, uid: 189707 },
-  { id: 15, title: "Livetopia", cat: "Aventura", rate: 9.2, year: 2021, uid: 375992766 },
-  { id: 16, title: "DOORS", cat: "Puzzle", rate: 9.6, year: 2022, uid: 6516141723 },
-  { id: 17, title: "Escape Room", cat: "Puzzle", rate: 9.2, year: 2019, uid: 2899400669 },
-  { id: 18, title: "The Maze", cat: "Puzzle", rate: 8.9, year: 2020, uid: 2899400669 },
-  { id: 19, title: "Find the Markers", cat: "Puzzle", rate: 9.0, year: 2022, uid: 6106467870 },
-  { id: 20, title: "The Crossword", cat: "Puzzle", rate: 8.7, year: 2021, uid: 2899400669 },
-  { id: 21, title: "Driving Empire", cat: "Corrida", rate: 9.4, year: 2019, uid: 2482798404 },
-  { id: 22, title: "Vehicle Simulator", cat: "Corrida", rate: 9.3, year: 2017, uid: 2000140230 },
-  { id: 23, title: "Car Crushers 2", cat: "Corrida", rate: 9.1, year: 2018, uid: 2482798404 },
-  { id: 24, title: "Midnight Racing: Tokyo", cat: "Corrida", rate: 9.0, year: 2022, uid: 2482798404 },
-  { id: 25, title: "Ultimate Driving", cat: "Corrida", rate: 8.8, year: 2016, uid: 2000140230 },
-  { id: 26, title: "Tower Defense Simulator", cat: "Estratégia", rate: 9.5, year: 2019, uid: 1031441993 },
-  { id: 27, title: "BedWars", cat: "Estratégia", rate: 9.4, year: 2020, uid: 6723319538 },
-  { id: 28, title: "Tower Battles", cat: "Estratégia", rate: 9.2, year: 2017, uid: 1031441993 },
-  { id: 29, title: "Zombie Attack", cat: "Estratégia", rate: 8.9, year: 2015, uid: 1031441993 },
-  { id: 30, title: "Skibi Defense", cat: "Estratégia", rate: 9.0, year: 2023, uid: 6723319538 },
-  { id: 31, title: "The Mimic", cat: "Terror", rate: 9.5, year: 2021, uid: 5889580631 },
-  { id: 32, title: "Piggy", cat: "Terror", rate: 9.4, year: 2020, uid: 4609227647 },
-  { id: 33, title: "Rainbow Friends", cat: "Terror", rate: 9.3, year: 2022, uid: 5889580631 },
-  { id: 34, title: "The Rake", cat: "Terror", rate: 8.9, year: 2020, uid: 4609227647 },
-  { id: 35, title: "Alone", cat: "Terror", rate: 9.0, year: 2021, uid: 5889580631 },
-  { id: 36, title: "Super Power Fighting Simulator", cat: "Luta", rate: 9.3, year: 2019, uid: 1185801290 },
-  { id: 37, title: "Strongest Punch Simulator", cat: "Luta", rate: 9.1, year: 2020, uid: 1185801290 },
-  { id: 38, title: "Rumble Quest", cat: "Luta", rate: 9.0, year: 2021, uid: 1185801290 },
-  { id: 39, title: "Punch Simulator", cat: "Luta", rate: 8.7, year: 2018, uid: 1185801290 },
-  { id: 40, title: "Sword Fights on the Heights", cat: "Luta", rate: 8.9, year: 2009, uid: 1185801290 },
+  { id: 1, title: "Blox Fruits", cat: "RPG", rate: 9.6, year: 2019, uid: 2753915549, tier: "mediano" },
+  { id: 2, title: "World // Zero", cat: "RPG", rate: 9.4, year: 2020, uid: 1278504545, tier: "mediano" },
+  { id: 3, title: "King Legacy", cat: "RPG", rate: 9.3, year: 2021, uid: 4529299233, tier: "mediano" },
+  { id: 4, title: "Arcane Odyssey", cat: "RPG", rate: 9.5, year: 2022, uid: 2753915549, tier: "mediano" },
+  { id: 5, title: "Swordburst 2", cat: "RPG", rate: 9.1, year: 2018, uid: 2753915549, tier: "mediano" },
+  { id: 6, title: "Arsenal", cat: "FPS", rate: 9.5, year: 2016, uid: 286090480, tier: "mediano" },
+  { id: 7, title: "Phantom Forces", cat: "FPS", rate: 9.4, year: 2015, uid: 292439477, tier: "forte" },
+  { id: 8, title: "Bad Business", cat: "FPS", rate: 9.2, year: 2018, uid: 286090480, tier: "forte" },
+  { id: 9, title: "Counter Blox", cat: "FPS", rate: 9.0, year: 2016, uid: 292439477, tier: "mediano" },
+  { id: 10, title: "Rivals", cat: "FPS", rate: 9.3, year: 2021, uid: 286090480, tier: "mediano" },
+  { id: 11, title: "Adopt Me!", cat: "Aventura", rate: 9.7, year: 2017, uid: 375992766, tier: "fraco" },
+  { id: 12, title: "Brookhaven RP", cat: "Aventura", rate: 9.6, year: 2020, uid: 375992766, tier: "fraco" },
+  { id: 13, title: "Jailbreak", cat: "Aventura", rate: 9.5, year: 2017, uid: 2432640257, tier: "fraco" },
+  { id: 14, title: "Natural Disaster Survival", cat: "Aventura", rate: 9.0, year: 2008, uid: 189707, tier: "super_fraco" },
+  { id: 15, title: "Livetopia", cat: "Aventura", rate: 9.2, year: 2021, uid: 375992766, tier: "fraco" },
+  { id: 16, title: "DOORS", cat: "Puzzle", rate: 9.6, year: 2022, uid: 6516141723, tier: "mediano" },
+  { id: 17, title: "Escape Room", cat: "Puzzle", rate: 9.2, year: 2019, uid: 2899400669, tier: "fraco" },
+  { id: 18, title: "The Maze", cat: "Puzzle", rate: 8.9, year: 2020, uid: 2899400669, tier: "super_fraco" },
+  { id: 19, title: "Find the Markers", cat: "Puzzle", rate: 9.0, year: 2022, uid: 6106467870, tier: "fraco" },
+  { id: 20, title: "The Crossword", cat: "Puzzle", rate: 8.7, year: 2021, uid: 2899400669, tier: "fraco" },
+  { id: 21, title: "Driving Empire", cat: "Corrida", rate: 9.4, year: 2019, uid: 2482798404, tier: "mediano" },
+  { id: 22, title: "Vehicle Simulator", cat: "Corrida", rate: 9.3, year: 2017, uid: 2000140230, tier: "fraco" },
+  { id: 23, title: "Car Crushers 2", cat: "Corrida", rate: 9.1, year: 2018, uid: 2482798404, tier: "fraco" },
+  { id: 24, title: "Midnight Racing: Tokyo", cat: "Corrida", rate: 9.0, year: 2022, uid: 2482798404, tier: "mediano" },
+  { id: 25, title: "Ultimate Driving", cat: "Corrida", rate: 8.8, year: 2016, uid: 2000140230, tier: "fraco" },
+  { id: 26, title: "Tower Defense Simulator", cat: "Estratégia", rate: 9.5, year: 2019, uid: 1031441993, tier: "fraco" },
+  { id: 27, title: "BedWars", cat: "Estratégia", rate: 9.4, year: 2020, uid: 6723319538, tier: "mediano" },
+  { id: 28, title: "Tower Battles", cat: "Estratégia", rate: 9.2, year: 2017, uid: 1031441993, tier: "fraco" },
+  { id: 29, title: "Zombie Attack", cat: "Estratégia", rate: 8.9, year: 2015, uid: 1031441993, tier: "super_fraco" },
+  { id: 30, title: "Skibi Defense", cat: "Estratégia", rate: 9.0, year: 2023, uid: 6723319538, tier: "mediano" },
+  { id: 31, title: "The Mimic", cat: "Terror", rate: 9.5, year: 2021, uid: 5889580631, tier: "mediano" },
+  { id: 32, title: "Piggy", cat: "Terror", rate: 9.4, year: 2020, uid: 4609227647, tier: "fraco" },
+  { id: 33, title: "Rainbow Friends", cat: "Terror", rate: 9.3, year: 2022, uid: 5889580631, tier: "fraco" },
+  { id: 34, title: "The Rake", cat: "Terror", rate: 8.9, year: 2020, uid: 4609227647, tier: "fraco" },
+  { id: 35, title: "Alone", cat: "Terror", rate: 9.0, year: 2021, uid: 5889580631, tier: "fraco" },
+  { id: 36, title: "Super Power Fighting Simulator", cat: "Luta", rate: 9.3, year: 2019, uid: 1185801290, tier: "fraco" },
+  { id: 37, title: "Strongest Punch Simulator", cat: "Luta", rate: 9.1, year: 2020, uid: 1185801290, tier: "fraco" },
+  { id: 38, title: "Rumble Quest", cat: "Luta", rate: 9.0, year: 2021, uid: 1185801290, tier: "mediano" },
+  { id: 39, title: "Punch Simulator", cat: "Luta", rate: 8.7, year: 2018, uid: 1185801290, tier: "fraco" },
+  { id: 40, title: "Sword Fights on the Heights", cat: "Luta", rate: 8.9, year: 2009, uid: 1185801290, tier: "super_fraco" },
 ];
 
 const mobileGames = [
@@ -97,6 +101,7 @@ const mobileGames = [
 ];
 
 let currentMode = "pc";
+let currentTier = "all";
 let robloxThumbs = {};
 
 function switchMode(mode) {
@@ -104,6 +109,13 @@ function switchMode(mode) {
   document.getElementById("btn-pc").classList.toggle("active", mode === "pc");
   document.getElementById("btn-mobile").classList.toggle("active", mode === "mobile");
   document.getElementById("mode-label").textContent = mode === "pc" ? "PC" : "Celular";
+  document.getElementById("tier-container").style.display = mode === "pc" ? "flex" : "none";
+  render();
+}
+
+function selectTier(tier) {
+  currentTier = tier;
+  document.querySelectorAll(".tier-btn").forEach(b => b.classList.toggle("active", b.dataset.tier === tier));
   render();
 }
 
@@ -114,7 +126,10 @@ function getImage(game) {
 }
 
 function render() {
-  const data = currentMode === "pc" ? pcGames : mobileGames;
+  let data = currentMode === "pc" ? pcGames : mobileGames;
+  if (currentMode === "pc" && currentTier !== "all") {
+    data = data.filter(g => g.tier === currentTier);
+  }
   const groups = {};
   for (const g of data) {
     if (!groups[g.cat]) groups[g.cat] = [];
@@ -143,12 +158,14 @@ function render() {
             ? `<img class="game-image" src="${src}" alt="${g.title}" loading="lazy" onerror="this.style.display='none'">`
             : `<div class="game-image game-image-fallback" style="background:${color}"></div>`;
           const stars = "&#9733;".repeat(Math.floor(g.rate / 2)) + (g.rate % 2 >= 1 ? "&#189;" : "") + "&#9734;".repeat(5 - Math.floor(g.rate / 2) - (g.rate % 2 >= 1 ? 1 : 0));
+          const tierBadge = g.tier ? `<span class="tier-game-badge tier-badge-${g.tier}">${tierNames[g.tier]}</span>` : "";
           return `
           <div class="game-card">
             ${imgHtml}
             <div class="game-info">
               ${g.id === best.id ? '<span class="best-badge">&#9733; Melhor</span>' : ''}
               <h3>${g.title}</h3>
+              ${tierBadge}
               <div class="game-meta">${g.year}</div>
               <div class="game-rating">
                 <span class="star">${stars}</span>
@@ -164,22 +181,18 @@ function render() {
 
 async function fetchRobloxThumbs() {
   const ids = [...new Set(pcGames.filter(g => g.uid).map(g => g.uid))];
-  const chunkSize = 100;
-  for (let i = 0; i < ids.length; i += chunkSize) {
-    const chunk = ids.slice(i, i + chunkSize);
+  for (let i = 0; i < ids.length; i += 100) {
+    const chunk = ids.slice(i, i + 100);
     try {
       const r = await fetch(`https://thumbnails.roblox.com/v1/games/icons?universeIds=${chunk.join(",")}&size=512x512&format=Png`);
       const d = await r.json();
-      for (const item of d.data) {
-        robloxThumbs[item.targetId] = item.imageUrl;
-      }
-    } catch (e) {
-      console.error("Erro ao buscar thumbnails:", e);
-    }
+      for (const item of d.data) robloxThumbs[item.targetId] = item.imageUrl;
+    } catch (e) { console.error(e); }
   }
   render();
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  document.getElementById("tier-container").style.display = "flex";
   await fetchRobloxThumbs();
 });

@@ -14,6 +14,13 @@
   <button id="btn-pc" class="toggle-btn active" onclick="switchMode('pc')">&#128187; PC</button>
   <button id="btn-mobile" class="toggle-btn" onclick="switchMode('mobile')">&#128241; Celular</button>
 </div>
+<div id="tier-container" class="tier-container">
+  <button class="tier-btn active" data-tier="all" onclick="selectTier('all')">Todas</button>
+  <button class="tier-btn" data-tier="super_fraco" onclick="selectTier('super_fraco')">&#128561; Super Fraco</button>
+  <button class="tier-btn" data-tier="fraco" onclick="selectTier('fraco')">&#128187; Fraco</button>
+  <button class="tier-btn" data-tier="mediano" onclick="selectTier('mediano')">&#9889; Mediano</button>
+  <button class="tier-btn" data-tier="forte" onclick="selectTier('forte')">&#128293; Forte</button>
+</div>
 </header>
 <main id="app">
 <div class="loading">Carregando...</div>
