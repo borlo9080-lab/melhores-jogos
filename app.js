@@ -108,8 +108,9 @@ function switchMode(mode) {
   currentTier = "all";
   document.getElementById("btn-pc").classList.toggle("active", mode === "pc");
   document.getElementById("btn-mobile").classList.toggle("active", mode === "mobile");
-  document.getElementById("mode-label").textContent = mode === "pc" ? "PC" : "Celular";
-  document.getElementById("tier-container").style.display = mode === "pc" ? "flex" : "none";
+  document.getElementById("btn-roblox").classList.toggle("active", mode === "roblox");
+  document.getElementById("mode-label").textContent = mode === "pc" ? "PC" : (mode === "mobile" ? "Celular" : "Roblox");
+  document.getElementById("tier-container").style.display = mode === "pc" || mode === "roblox" ? "flex" : "none";
   document.querySelectorAll(".tier-btn").forEach(b => b.classList.toggle("active", b.dataset.tier === "all"));
   render();
 }
@@ -125,8 +126,8 @@ function getInitials(title) {
 }
 
 function render() {
-  let data = currentMode === "pc" ? pcGames : mobileGames;
-  if (currentMode === "pc" && currentTier !== "all") {
+  let data = currentMode === "pc" || currentMode === "roblox" ? pcGames : mobileGames;
+  if ((currentMode === "pc" || currentMode === "roblox") && currentTier !== "all") {
     data = data.filter(g => g.tier === currentTier);
     if (data.length === 0) {
       document.getElementById("app").innerHTML = '<p class="loading" style="grid-column:1/-1">Nenhum jogo encontrado para este nível.</p>';
